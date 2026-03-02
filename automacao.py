@@ -11,7 +11,7 @@ def criar_pastas(ano):
     #Pastas dos meses
     meses = [
         "01-JANEIRO", "02-FEVEREIRO", "03-MARÇO", "04-ABRIL", "05-MAIO", "06-JUNHO",
-        "07-JULHO", "08-AGOSTO", "09-SETEMBRO", "10-OUTUBRO", "11-NOVEMBRO", "12-DEZEMBRO"
+        "07-JULHO", "08-AGOSTO", "09-SETEMBRO", "10-OUTUBRO", "11-NOVEMBRO", "12-DEZEMBRO",
     ]
     #Diretório raiz
     diretorio_raiz="CONTROLE DE COMPROVANTES"
@@ -67,7 +67,7 @@ def pegar_nome_diretorios(caminho):
 
 
 def verifica_diretorio_turno(turnos, diretorios):
-    #evita duplicaidades no vetor
+    #evita duplicidades no vetor
     encontrados = set()
 
     # quebra cada item de "turnos" em palavras individuais
@@ -87,7 +87,6 @@ def verifica_diretorio_turno(turnos, diretorios):
 
 def juntar_pdfs_e_imagens_turnos(ano,mes):
     
-    
     turnos = ["MANHÃ", "TARDE", "NOITE"]    
     
     pasta_principal="CONTROLE DE COMPROVANTES"
@@ -96,8 +95,6 @@ def juntar_pdfs_e_imagens_turnos(ano,mes):
 
 
     vetor_turno=verifica_diretorio_turno(turnos,diretorios)
-    
-
  
     # RELATÓRIOS/ANO/MÊS
     pasta_destino = pasta_relatorio(ano,mes)
@@ -146,9 +143,6 @@ def juntar_pdfs_e_imagens_turnos(ano,mes):
             juntar_pdfs(pdfs_convertidos,pasta_principal,pasta_destino,nome_arquivo,mensagem_sucesso)
         
             todos_arquivos_geral.extend(pdfs_convertidos)
-
-
-
 
     mensagem_sucesso=f"PDF geral criado com {len(todos_arquivos_geral)} arquivos!"
     nome_arquivo= f"{ano}_{mes}_todos_turnos.pdf"

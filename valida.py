@@ -12,7 +12,7 @@ def verifica_ano(ano):
     
 def verifica_mes(mes):
     meses_dict = {
-        "01": "01-JANEIRO", "02": "02-FEVEREIRO", "3": "03-MARÇO", "04": "04-ABRIL",
+        "01": "01-JANEIRO", "02": "02-FEVEREIRO", "03": "03-MARÇO", "04": "04-ABRIL",
         "05": "05-MAIO", "06": "06-JUNHO", "07": "07-JULHO", "08": "08-AGOSTO",
         "09": "09-SETEMBRO", "10": "10-OUTUBRO", "11": "11-NOVEMBRO", "12": "12-DEZEMBRO"
     }
@@ -30,17 +30,17 @@ def entrada_ano():
         if not verifica_ano(ano):
             print("Ano inválido! Digite um ano no formato 20XX.")
         else:
-            break
-    return ano
+            return ano
 
 def entrada_mes():
     menu_meses()
     while True:
         entrada_mes = input("Digite o mês: ")
+        if entrada_mes == "0":
+            return "0"
         if not verifica_mes(entrada_mes):
             print("Mês inválido! Digete o número que corresponde ao mês!.")
         else:
-            mes=verifica_mes(entrada_mes)
-            break
-    return mes
+            mes = verifica_mes(entrada_mes)
+            return mes
 
